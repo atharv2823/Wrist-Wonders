@@ -19,7 +19,7 @@ function AddWatchPage() {
       toast.error("Please add all data")
     }
 
-    toast.loading("New Shoes Adding.........")
+    toast.loading("New Watch Adding.........")
      
     const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/watch`,{
       brand:brand,

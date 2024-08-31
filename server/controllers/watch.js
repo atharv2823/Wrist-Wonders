@@ -39,7 +39,7 @@ const getWatch =async (req, res) => {
     res.json({
       success: true,
       data: allWatch,
-      message: "shoes added succesfully",
+      message: "Watch added succesfully",
     });
   }
 
@@ -62,7 +62,7 @@ const putWatchId = async (req, res) => {
   
     const { id } = req.params;
   
-   const updatedWatch =await Shoes.updateOne({_id:id},{$set:{
+   const updatedWatch =await Watch.updateOne({_id:id},{$set:{
     brand:brand, 
     price:price, 
     color:color, 
@@ -87,7 +87,7 @@ const putWatchId = async (req, res) => {
 const deleteWatchId = async (req, res) => {
     const { id } = req.params;
   
-    const deleteone = await  Shoes.deleteOne({_id:id})
+    const deleteone = await  Watch.deleteOne({_id:id})
 
     
       res.json({

@@ -17,11 +17,11 @@ function EditPage() {
   const [review, setReview] = useState("");
   const [description, setDercription] = useState("");
 
-  const updateShoes = async () => {
+  const updatedWatch = async () => {
 
 
     const response = await axios.put(
-      `${process.env.REACT_APP_SERVER_URL}/shoes/${id}`,
+      `${process.env.REACT_APP_SERVER_URL}/watch/${id}`,
       {
         brand: brand,
         price: price,
@@ -38,13 +38,13 @@ function EditPage() {
 
 
 
-    const loadShoes= async (id)=>{
+    const loadWatch= async (id)=>{
 
       if(!id){
         return
       }
 
-    const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/shoes/${id}`)
+    const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/watch/${id}`)
 
     const {brand,
       price,
@@ -69,7 +69,7 @@ function EditPage() {
 
 
   useEffect(()=>{
-    loadShoes(id)
+    loadWatch(id)
   },[id])
 
 
@@ -77,7 +77,7 @@ function EditPage() {
   return (
     <div>
       <div>
-        <h1>Update Shoes Here</h1>
+        <h1>Update Watch Here</h1>
 
         <form className="input-container">
           <input
@@ -138,7 +138,7 @@ function EditPage() {
             className="input-brand"
           />
 
-          <button className="add-btn" onClick={updateShoes} type="button">
+          <button className="add-btn" onClick={updatedWatch} type="button">
             Update
           </button>
         </form>

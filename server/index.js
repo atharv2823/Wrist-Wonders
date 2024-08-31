@@ -34,7 +34,7 @@ app.get("/watch/:id", getWatchId);
 
 app.put("/watch/:id", putWatchId);
 
-app.delete("/shoes/:id", deleteWatchId);
+app.delete("/watch/:id", deleteWatchId);
 
 app.use("*", error)
 

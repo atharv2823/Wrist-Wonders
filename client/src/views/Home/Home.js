@@ -4,7 +4,7 @@ import WatchCard from '../../components/WatchCard/WatchCard.js'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import { Link } from 'react-router-dom'
-//import AddWatchPage from '../AddWatchPage/AddShoesPage'
+//import AddWatchPage from '../AddWatchPage/AddWAtchPage'
 
 
 function Home() {
@@ -13,13 +13,13 @@ function Home() {
 
   const LoadWatch = async ()=>{
 
-    toast.loading("Shoes Page Loading.......")
+    toast.loading("Watch Page Loading.......")
 
     const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/watch`)
 
     toast.dismiss()
 
-    toast.success("Shoes Loded Successfully")
+    toast.success("Watch Loded Successfully")
 
     setWatch(response.data.data)
 
@@ -65,7 +65,7 @@ function Home() {
                 gender={gender}
                 review={review}
                 description={description}
-                LoadShoes={LoadWatch}
+                LoadWatch={LoadWatch}
                 />
               )
             })
